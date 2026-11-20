@@ -1,0 +1,51 @@
+{
+  "name": "github-ci-cd-bot-sandbox",
+  "description": "Demo TypeScript calculator web app and testbed for Github-CI-CD-bot",
+  "version": "0.1.0",
+  "author": "",
+  "type": "module",
+  "private": true,
+  "homepage": "https://github.com/sfuosdev/Github-CI-CD-bot-sandbox",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfuosdev/Github-CI-CD-bot-sandbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sfuosdev/Github-CI-CD-bot-sandbox/issues"
+  },
+  "keywords": [
+    "typescript",
+    "calculator",
+    "sandbox"
+  ],
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "format:write": "npx prettier --write .",
+    "format:check": "npx prettier --check .",
+    "lint": "npx eslint .",
+    "test": "npx cross-env NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 jest"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/compat": "^2.0.2",
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^10.0.1",
+    "@jest/globals": "^30.2.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.56.0",
+    "cross-env": "^10.1.0",
+    "eslint": "^10.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jest": "^29.15.0",
+    "eslint-plugin-prettier": "^5.5.5",
+    "jest": "^30.2.0",
+    "prettier": "^3.8.1",
+    "ts-jest": "^29.4.6",
+    "ts-jest-resolver": "^2.0.1",
+    "typescript": "^5.9.3"
+  }
+}
