@@ -1,0 +1,176 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TS Demo Calculator</title>
+    <style>
+      :root {
+        --bg: #f4f6f9;
+        --card: #ffffff;
+        --text: #18202c;
+        --muted: #4b5563;
+        --border: #d1d5db;
+        --accent: #2563eb;
+        --accent-hover: #1d4ed8;
+        --result-bg: #f8fafc;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      main {
+        width: 100%;
+        max-width: 380px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      }
+
+      h1 {
+        margin: 0 0 1.25rem;
+        font-size: 1.35rem;
+        font-weight: 650;
+        letter-spacing: -0.015em;
+      }
+
+      .form-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 0.95rem;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.35rem;
+      }
+
+      .field label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--muted);
+        text-align: left;
+      }
+
+      .field input,
+      .field select {
+        display: block;
+        width: 100%;
+        height: 2.5rem;
+        padding: 0 0.75rem;
+        font-family: inherit;
+        font-size: 0.98rem;
+        line-height: 2.5rem;
+        color: var(--text);
+        background-color: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        transition:
+          border-color 0.15s ease,
+          box-shadow 0.15s ease;
+      }
+
+      .field input:focus,
+      .field select:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      }
+
+      button {
+        margin-top: 0.25rem;
+        width: 100%;
+        height: 2.65rem;
+        padding: 0 1rem;
+        font-family: inherit;
+        font-size: 0.98rem;
+        font-weight: 600;
+        color: #ffffff;
+        background-color: var(--accent);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+      }
+
+      button:hover {
+        background-color: var(--accent-hover);
+      }
+
+      button:active {
+        transform: translateY(1px);
+      }
+
+      #result {
+        margin: 1.15rem 0 0;
+        padding: 0.8rem 0.9rem;
+        border-radius: 8px;
+        background-color: var(--result-bg);
+        border: 1px solid var(--border);
+        font-size: 0.98rem;
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+        word-break: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Calculator</h1>
+      <div class="form-stack">
+        <div class="field">
+          <label for="left">Left operand</label>
+          <input id="left" type="number" step="any" value="0" />
+        </div>
+
+        <div class="field">
+          <label for="operator">Operator</label>
+          <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="^">^</option>
+            <option value="%">%</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="right">Right operand</label>
+          <input id="right" type="number" step="any" value="0" />
+        </div>
+
+        <button id="calculate-btn" type="button">Calculate</button>
+      </div>
+
+      <p id="result" aria-live="polite">Result: -</p>
+    </main>
+
+    <script type="module" src="../dist/main.js"></script>
+  </body>
+</html>
